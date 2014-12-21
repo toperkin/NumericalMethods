@@ -114,65 +114,84 @@ of problems in science and engineering. </p>
 				<section>
 					<h2>In Python!</h2>
 
-					<img width="178" height="238" href="http://toperkin.github.io/NumericalMethods/images-lect1/codeeval2014.jpg" alt="">
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/codeeval2014.jpg" alt="">
 				</section>
 
 				<section>
-					<h2>Works in Mobile Safari</h2>
-					<p>
-						Try it out! You can swipe through the slides and pinch your way to the overview.
-					</p>
-				</section>
-
-				<section>
-					<h2>Marvelous Unordered List</h2>
+					<h3>A note of caution about python</h3>
 					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
+						<li>There are significant differences between 2.x and 3.x versions of python.</li>
+						<li>For a while people were advocating staying with 2.x until 3.x matured.  It has.</li>
+						<li>Some of the most popular "Teach yourself python" websites take this approach.</li>
+						<li>Part of why they are popular, is they've been around the longest.  They're old
+					sites.  They like the old version.</li>
+						<li>All of the code I provide will be tested on Python 3.4 or better.</li>
+						<li>When looking stuff up on the internet be cautious of <b>old code</b>, it may not work with the latest version.</li>
+				</ul>
 				</section>
 
 				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
+					<h2>Your most common syntax error</h2>
+						<p>In python, whitespace is important. It controls scope.</p>
+<pre><code data-trim contenteditable>
+#python
+def fact(n):
+	if (n == 0):
+		return 1
+	else:
+		return n * fact(n-1)
+</code></pre>
+
+<pre><code data-trim contenteditable>
+/* C, C++ */
+long factorial(int n)
+{
+if (n == 0)
+	return 1;
+else
+	return(n * factorial(n-1));
+}
+</code></pre>
 				</section>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						For those of you who like that sort of thing. Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  For those of you who like that sort of thing.
-						  Instructions and a bit more info available [here](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
+				<section>
+					<h2>Observations</h2>
+						<ul>
+							<li>Notice {} are not needed to define the length of the function in python.</li>
+							<li>The indent is 4 spaces.  This is what controls the scope in python.</li>
+							<li>If you mix tabs and spaces, your code will not run.</li>
+							<li>In python type is dynamically assigned.  Python knows <b>n</b> is an "int" and <b>fact</b> returns a "long"</li>
+						</ul>
 				</section>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=cube#/transitions">Cube</a> -
-						<a href="?transition=page#/transitions">Page</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a> -
-						<a href="?transition=linear#/transitions">Linear</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?#/transitions">Default</a>
-					</p>
+				<section>
+					<h2>Homework</h2>
+					<ul>
+						<li>Install Python and important libraries (NumPy, SciPy, SymPy, Pandas, Matplotlib...) </li>
+						<li><a href="http://www.continuum.io/">Anaconda python</a> has a free installer which gives us all we need</li>
+						<li>Remember: Download version Python 3.4 or higher</li>
+					</ul>
+
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/continuum_analytics_logo.png" alt="Continuum Analytics logo" style="width: 500px;"/>
+				</section>
+
+				<section>
+					<h2>Homework</h2>
+					<p>I'll post a file "hw1.py" for you to test your installation against.</p>
+				</section>
+
+				<section>
+					<h3>Perhaps a little <a href="http://julialang.org/">Julia</a> too - optional</h3>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/julia.png" alt="Julia logo" style="width: 500px;"/>
+				</section>
+
+				<section>
+					<h2>Julia</h2>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/julia-bench.png" alt="Julia logo"/>
+					<ul>
+						<li>C preformance = 1</li>
+						<li>New language out of MIT.  Very well adapted to numerical methods/scientific computing.  Looks a lot like python.</li>
+					</ul>
 				</section>
 
 				<section id="themes">
