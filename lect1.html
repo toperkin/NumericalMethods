@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
 
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -51,64 +51,70 @@
 				</section>
 
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
+					<h2>What is it and why use it?
+					</h2>
 				</section>
 
 				<!-- Example of nested vertical slides -->
 				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+					<h2>What is it?</h2>
+<p>This course analyzed the basic techniques for the efficient numerical solution
+of problems in science and engineering. </p>
+</section>
+<section>
+<h2>Topics spanned:</h2>
+					<ul>
+					<li>Root finding</li>
+					<li>Interpolation</li>
+					<li>Approximation of functions</li>
+					<li>Integration</li>
+					<li>Differential equations</li>
+					<li>Linear algebra</li>
+					<li>Linear programming</li>
+					<li>Optimization</li>
+				</ul>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
+					<h2>Why use it?</h2>
+					<h3>
+						Some problems can not be solved exactly:
+					</h3>
+
+					<p>\[\int_0^1 e^{-x^2} dx\qquad \text{and}\qquad \cos(x) = x \]</p>
+
+					<ul>
+						<li>Find the roots of a polynomial of degree 5 or higher (Abel-Ruffini Theorem)</li>
+						<li>Solving some differential equations</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why use it?</h2>
+					<h3>And some simply are very slow:</h3>
 					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
+					<ul>
+						<li>Invert a matrix</li>
+						<li>Solve linear system</li>
+						<li>Eigenvalue problems</li>
+						<li>Travelling Salesman</li>
+					</ul>
 					</p>
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+					<p>Since we are approximating solutions, we will also be concerned with the <b>rate of
+					convergence</b> and <b>estimating error</b>.</p>
+				</section>
+
+				<section>
+					<h2>You will be programming.</h2>
+				</section>
+
+				<section>
+					<h2>In Python!</h2>
+
+					<img width="178" height="238" href="http://toperkin.github.io/NumericalMethods/images-lect1/codeeval2014.jpg" alt="">
 				</section>
 
 				<section>
@@ -377,6 +383,7 @@ function linkify( selector ) {
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 				// parallaxBackgroundSize: '2100px 900px',
 
+
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
@@ -384,7 +391,8 @@ function linkify( selector ) {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 
