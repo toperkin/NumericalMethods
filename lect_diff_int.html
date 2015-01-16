@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Numerical Methods</title>
+
+		<meta name="description" content="Lecture Derivatives and Integration">
+		<meta name="author" content="Tony Perkins">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1># Numerical Methods with Python</h1>
+					<h3>Differentiation and Integration</h3>
+					<p>
+						<small>Created by <a href="http://toperkin.github.io/nm.html">Tony Perkins</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>What is it and why use it?
+					</h2>
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<h2>What is it?</h2>
+<p>This course analyzed the basic techniques for the efficient numerical solution
+of problems in science and engineering. </p>
+</section>
+<section>
+<h2>Topics spanned:</h2>
+					<ul>
+					<li>Root finding</li>
+					<li>Interpolation</li>
+					<li>Approximation of functions</li>
+					<li>Integration</li>
+					<li>Differential equations</li>
+					<li>Linear algebra</li>
+					<li>Linear programming</li>
+					<li>Optimization</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Why use it?</h2>
+					<h3>
+						Some problems can not be solved exactly:
+					</h3>
+
+					<p>\[\int_0^1 e^{-x^2} dx\qquad \text{and}\qquad \cos(x) = x \]</p>
+
+					<ul>
+						<li>Find the roots of a polynomial of degree 5 or higher (Abel-Ruffini Theorem)</li>
+						<li>Solving some differential equations</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Why use it?</h2>
+					<h3>And some simply are very slow:</h3>
+					<p>
+					<ul>
+						<li>Invert a matrix</li>
+						<li>Solve linear system</li>
+						<li>Eigenvalue problems</li>
+						<li>Travelling Salesman</li>
+					</ul>
+					</p>
+				</section>
+
+				<section>
+					<p>Since we are approximating solutions, we will also be concerned with the <b>rate of
+					convergence</b> and <b>estimating error</b>.</p>
+				</section>
+
+				<section>
+					<h2>You will be programming.</h2>
+				</section>
+
+				<section>
+					<h2>In Python!</h2>
+
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/codeeval2014.jpg" alt="">
+				</section>
+
+				<section>
+					<h3>A note of caution about python</h3>
+					<ul>
+						<li>There are significant differences between 2.x and 3.x versions of python.</li>
+						<li>For a while people were advocating staying with 2.x until 3.x matured.  It has.</li>
+						<li>Some of the most popular "Teach yourself python" websites take this approach.</li>
+						<li>Part of why they are popular, is they've been around the longest.  They're old
+					sites.  They like the old version.</li>
+						<li>All of the code I provide will be tested on Python 3.4 or better.</li>
+						<li>When looking stuff up on the internet be cautious of <b>old code</b>, it may not work with the latest version.</li>
+				</ul>
+				</section>
+
+				<section>
+					<h2>Your most common syntax error</h2>
+						<p>In python, whitespace is important. It controls scope.</p>
+<pre><code data-trim contenteditable>
+#python
+def fact(n):
+	if (n == 0):
+		return 1
+	else:
+		return n * fact(n-1)
+</code></pre>
+
+<pre><code data-trim contenteditable>
+/* C, C++ */
+long factorial(int n)
+{
+if (n == 0)
+	return 1;
+else
+	return(n * factorial(n-1));
+}
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Observations</h2>
+						<ul>
+							<li>Notice {} are not needed to define the length of the function in python.</li>
+							<li>The indent is 4 spaces.  This is what controls the scope in python.</li>
+							<li>If you mix tabs and spaces, your code will not run.</li>
+							<li>In python type is dynamically assigned.  Python knows <b>n</b> is an "int" and <b>fact</b> returns a "long"</li>
+						</ul>
+				</section>
+
+				<section>
+					<h2>Homework</h2>
+					<ul>
+						<li>Install Python and important libraries (NumPy, SciPy, SymPy, Pandas, Matplotlib...) </li>
+						<li><a href="http://www.continuum.io/">Anaconda python</a> has a free installer which gives us all we need</li>
+						<li>Remember: Download version Python 3.4 or higher</li>
+					</ul>
+
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/continuum_analytics_logo.png" alt="Continuum Analytics logo" style="width: 500px;"/>
+				</section>
+
+				<section>
+					<h2>Homework</h2>
+					<p>I'll post a file "hw1.py" for you to test your installation against.</p>
+				</section>
+
+				<section>
+					<h3>Perhaps a little <a href="http://julialang.org/">Julia</a> too - optional</h3>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/julia.png" alt="Julia logo" style="width: 500px;"/>
+				</section>
+
+				<section>
+					<h2>Julia</h2>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/julia-bench.png" alt="Julia logo"/>
+					<ul>
+						<li>C preformance = 1</li>
+						<li>New language out of MIT.  Very well adapted to numerical methods/scientific computing.  Looks a lot like python.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Or even some <a href="http://clojure.org/">Clojure</a></h3>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect1/clojure.png" alt="Clojure logo" style="width: 500px;"/>
+					<p>I have a soft spot for functional languages.</p>
+				</section>
+
+				<section>
+					<h2>Grading</h2>
+					<ul>
+						<li>Homework - 40%</li>
+						<li>Mid-term - 20%</li>
+						<li>Project - 30%</li>
+						<li>Response to presentations - 10%</li>
+						<li>Final - (up to 10% bonus)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Homework</h2>
+					<ul>
+						<li>[20%] Programming assignments</li>
+						<p>Every assignment comes with options for <b>bonus</b>:</p>
+						<ul>
+							<li>A Julia or Clojure version of the assignment</li>
+							<li>Feature implementation, e.g. Animations, Users interactivity, Improved algorithm</li>
+							<li>SymPy research for algorithm which implements an exact solver and comparision.</li>
+							<li>In general, extra points for any work which extends the assignment</li>
+						</ul>
+						<li>[20%] Written problem sets</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Mid-term</h2>
+					<ul>
+						<li>[20%] 11th week of class - March 26</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Final Project</h2>
+					<ul>
+						<li>[20%] +3pgs (11pts, single spaced, 1in margins - page count not including bibliography, source code of experiment, or graphics):  The student will report: First, information he/she had obtained about the historical context of the paper, including biographical information about the author(s) and a plot of citations as a function of time. Second, a mathematical discussion of some of the central ideas of the paper.  Third, the results of Python experiments conducted to illustrate some of the properties of the algorithm under discussion. </li>
+					 <li>[10%] presentation: 30 min talk on above (last three weeks of class)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Response to presentations</h2>
+					<ul>
+						<li>[10%] written assessment of the presentations (due at scheduled time of final).</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Final</h2>
+					<ul>
+						<li>[Optional Bonus: +10%] A cummulative exam - May 1, 12 – 2 pm</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>A problem. Example Julia.</h2>
+					<p>Julia is dynamically typed, but the types are fixed~ish and this lets C-type errors sneak in.</p>
+					<p>The closer to machine code you get, the faster your code will be run
+					because you have more control and can optimize.  However "with great power, comes
+					great responsibility."  Which means in Fortran, C, Julia... you can get into hot water.</p>
+
+<pre><code>#julia
+#factorial_example.jl
+
+function fact(n)
+	if n == 0
+		return 1
+		end
+	return n*fact(n-1)
+	end
+
+for n =1:21
+	println("The Factorial of " , n , " is ", fact(n))
+	end
+</code></pre>
+				</section>
+
+				<section>
+					<h2>The output:</h2>
+<pre><code>
+> julia factorial_example.jl
+
+The Factorial of 1 is 1
+The Factorial of 2 is 2
+The Factorial of 3 is 6
+The Factorial of 4 is 24
+The Factorial of 5 is 120
+The Factorial of 6 is 720
+The Factorial of 7 is 5040
+The Factorial of 8 is 40320
+The Factorial of 9 is 362880
+The Factorial of 10 is 3628800
+The Factorial of 11 is 39916800
+The Factorial of 12 is 479001600
+The Factorial of 13 is 6227020800
+The Factorial of 14 is 87178291200
+The Factorial of 15 is 1307674368000
+The Factorial of 16 is 20922789888000
+The Factorial of 17 is 355687428096000
+The Factorial of 18 is 6402373705728000
+The Factorial of 19 is 121645100408832000
+The Factorial of 20 is 2432902008176640000
+The Factorial of 21 is -4249290049419214848
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Under the hood:</h2>
+
+<pre><code>#julia
+# fact_explained.jl
+println("The smallest integer Julia handles is  ", typemin(Int64), "\n" )
+
+println("The largest integer Julia handles is  ", typemax(Int64), "\n"  )
+
+println("A little too small and stuff goes wrong  " , typemin(Int64) - 1, "\n" )
+
+println("A little too big also ruins your world  ", typemax(Int64) +1, "\n" )
+</code></pre>
+				</section>
+
+				<section>
+					<h2>Here is the output:</h2>
+<pre><code>
+> julia fact_explained.jl
+
+The smallest integer Julia handles is  -9223372036854775808
+
+The largest integer Julia handles is  9223372036854775807
+
+A little too small and stuff goes wrong  9223372036854775807
+
+A little too big also ruins your world  -9223372036854775808
+</code></pre>
+				</section>
+
+				<section>
+				<h2>Of course, in the real world this never comes up, right?</h2>
+				</section>
+
+				<section>
+					<h2>Patriot Missle</h2>
+				<p>The <a href="https://www.ima.umn.edu/~arnold/disasters/patriot.html">Patriot Missile failure</a>, in Dharan, Saudi Arabia, on February 25, 1991 which resulted in 28 deaths, is ultimately attributable to poor handling of rounding errors.</p>
+				</section>
+
+				<section>
+					<h2>Spleipner A</h2>
+					<p>The <a href="https://www.ima.umn.edu/~arnold/disasters/sleipner.html">sinking of the Sleipner A</a> offshore platform in Gandsfjorden near Stavanger, Norway, on August 23, 1991, resulted in a loss of nearly one billion dollars. It was found to be the result of inaccurate finite element analysis.</p>
+				</section>
+
+				<section>
+					<h2>Ariane 5 rocket</h2>
+					<p>The <a href="http://www.around.com/ariane.html">explosion of the Ariane 5 rocket</a> just after lift-off on its maiden voyage off French Guiana, on June 4, 1996, was ultimately the consequence of a simple overflow.</p>
+				</section>
+
+				<section>
+				<h2>It's time to get started!</h2>
+				</section>
+
+				<section>
+					<h2>Getting started</h2>
+					<p>Getting up and running is done in only a few steps:</p>
+					<ol>
+						<li> Install <a href="http://www.continuum.io/">Anaconda python</a> version 3.4 or better.</li>
+						<li>Code discussed in lectures and assignments can be found on my  <a href="https://github.com/toperkin/NumericalMethodsCourseCode">Github</a> account.</li>
+						<li>Fill in the <b>TODO</b> statements and run <b>hw1.py</b></li>
+						<li>Check out the offical course <a href="http://toperkin.github.io/nm.html">page</a> for an outline and details of the final project.</li>
+						<li>Skim over Chapters 1 and 2 from our  <a href="http://www.ams.org/bookstore-getitem/item=amstext-2">text</a></li>
+					</ol>
+				</section>
+
+				<section>
+					<h2>That's all folks (for now)!</h2>
+					<p>These slides were prepared by <a href="http://toperkin.github.io/NumericalMethods/lect1.html">Tony Perkins</a></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
