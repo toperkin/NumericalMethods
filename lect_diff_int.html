@@ -251,9 +251,27 @@ integral is equivalent to</p>
 </section>
 
 <section>
-<p>The integral above is calculating the what's called the <i>expected value</i> of \[\frac{f(\vec{x})}{p(\vec{x})} \qquad \text{denoted} \qquad E\left[\frac{f(\vec{x})}{p(\vec{x})} \right]\]	
+<p>The integral above is calculating the what's called the <i>expected value</i> of \[\frac{f(\vec{x})}{p(\vec{x})} \qquad \text{denoted} \qquad E\left[\frac{f(\vec{x})}{p(\vec{x})} \right]\]
 </p>
 </section>
+
+<section>
+<p>We can estimate the value of
+	\[E\left[\frac{f(\vec{x})}{p(\vec{x})} \right]\]
+	by generating a number of random
+	samples according to $p$, computing $f/p$ for each sample, and finding the average of these values.
+</section>
+
+<section>
+	<h2>Practical example:</h2>
+	\[\int_a^b f(x) dx\]
+</section>
+
+<section>
+<p>Let $p$ be uniform on $[a, b]$ so
+\[p(x) = \begin{cases} \frac{1}{b-a} &\colon x\in [a, b] \\ 0 &\colon \text{else}\end{cases}\]</p>
+</section>
+
 				<section>
 					<h2>That's all folks (for now)!</h2>
 					<p>These slides were prepared by <a href="http://toperkin.github.io/NumericalMethods/lect1.html">Tony Perkins</a></p>
