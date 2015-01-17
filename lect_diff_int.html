@@ -197,7 +197,7 @@
 <section>
 	<h2>Trapezoidal Rule
 	</h2>
-	<p>1st Lagrange polyinomial</p>
+	<p>1st Lagrange polynomial</p>
 	<p>$x_0=a$, $x_1=b$, $h=b-a$ </p>
 	\[ \int_a^b f(x)dx = \frac{h}{2}[f(x_0)+f(x_1)] - \frac{h^3}{12}f''(\zeta) \]
 </section>
@@ -205,7 +205,7 @@
 <section>
 	<h2>Simpson's Rule
 	</h2>
-	<p>2st Lagrange polyinomial</p>
+	<p>2st Lagrange polynomial</p>
 	<p>$x_0=a$, $x_2=b$, $x_1=a+h$, $h=(b-a)/2$ </p>
 	\[ \int_a^b f(x)dx = \frac{h}{3}[f(x_0)+4f(x_1)+f(x_2)] - \frac{h^5}{90}f^{(4)}(\zeta) \]
 </section>
@@ -277,13 +277,17 @@ integral is equivalent to</p>
 </section>
 
 <section>
-\[\int_a^b f(x) dx \approx \frac{1}{N} \sum_{i=1}^N \frac{f(x_i)}{p(x_i)}\]	
+\[\int_a^b f(x) dx \approx \frac{1}{N} \sum_{i=1}^N \frac{f(x_i)}{p(x_i)}=\frac{1}{N} \sum_{i=1}^N \frac{f(x_i)}{\frac{1}{b-a}} = \frac{b-a}{N} \sum_{i=1}^N f(x_i)\]
 </section>
-
+<section>
+	<p>More precisely, the Law of Large Numbers provides:</p>
+	\[\int_a^b f(x) dx = \lim_{N\rightarrow \infty}\frac{b-a}{N} \sum_{i=1}^N f(x_i)\]
+	<p>Notice that this is essentially the same definition from Calc 1, expect we only specify that the $x_i$ are uniform instead of say the left-end points of a partition of $[a, b]$.</p>
+</section>
 
 				<section>
 					<h2>That's all folks (for now)!</h2>
-					<p>These slides were prepared by <a href="http://toperkin.github.io/NumericalMethods/lect1.html">Tony Perkins</a></p>
+					<p>These slides were prepared by <a href="http://toperkin.github.io/nm.html">Tony Perkins</a></p>
 				</section>
 			</div>
 		</div>
