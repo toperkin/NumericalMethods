@@ -134,9 +134,11 @@
 	\[f'(x_0) = \frac{1}{h^2}[f(x_0-h) -2f(x_0)+f(x_0+h)]-\frac{h^2}{12}f^{(4)}(\zeta_3)\]
 </p>
 </section>
+
 <section>
 	<p>
-	and  the <i>five-point formula</i>:</p>
+	and  the <i>five-point formula</i>:
+	</p>
 	\[f'(x_0) = \frac{1}{12h}[f(x_0-2h) -8f(x_0-h) \]
 	\[\qquad + 8f(x_0+h)-f(x_0+2h)]+\frac{h^4}{30}f^{(5)}(\zeta)\]
 
@@ -173,7 +175,7 @@
 </section>
 
 <section>
-	<h2>A clear combination of equations: </h2>
+	<h2>A clever combination of equations: </h2>
 
 	<br /> <br />
 
@@ -185,7 +187,38 @@
 
 </section>
 
+<section>
+	<h2>Numerical Integration
+	</h2>
+	<p>numerical quadrature
+	</p>
+</section>
 
+<section>
+	<h2>Trapezoidal Rule
+	</h2>
+	<p>1st Lagrange polyinomial</p>
+	<p>$x_0=a$, $x_1=b$, $h=b-a$ </p>
+	\[ \int_a^b f(x)dx = \frac{h}{2}[f(x_0)+f(x_1)] - \frac{h^3}{12}f''(\zeta) \]
+</section>
+
+<section>
+	<h2>Simpson's Rule
+	</h2>
+	<p>2st Lagrange polyinomial</p>
+	<p>$x_0=a$, $x_2=b$, $x_1=a+h$, $h=(b-a)/2$ </p>
+	\[ \int_a^b f(x)dx = \frac{h}{3}[f(x_0)+4f(x_1)+f(x_2)] - \frac{h^5}{90}f^{(4)}(\zeta) \]
+</section>
+
+<section>
+	<p>The <i>degee of accuracy</i> or <i>precision</i> of a quadrature formula is the largest positive integer $n$ such that the formula is exact for $x^k$ for each $k=0, 1, \ldots, n$.</p>
+</section>
+
+<section>
+	<h2>Monte Carlo Integration</h2>
+	<p>Monte Carlo integration is a powerful method for computing the value of complex
+	integrals using probabilistic techniques.</p>	
+</section>
 
 				<section>
 					<h2>That's all folks (for now)!</h2>
