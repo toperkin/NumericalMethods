@@ -236,10 +236,26 @@
 </section>
 
 <section>
-<p>We use vector notation to indicate that $f$ need not be one-dimensional.  In fact, Monte Carlo techniques are used mostly for higher-dimensional integrals,
+<p>We use vector notation to indicate that  $f$ need not be one-dimensional.  In fact, Monte Carlo techniques are used mostly for higher-dimensional integrals,
 	or integrals that cannot be evaulated analytically.</p>
 </section>
 
+<section>
+<p>Assume that we have a PDF $p$ defined over a domain $D$. Then the above
+integral is equivalent to</p>
+\[F = \int\limits_D \frac{f(\vec{x})}{p(\vec{x})} p(\vec{x}) d \mu(\vec{x})\]
+</section>
+
+<section>
+<p>In the homework, we'll be working over an interval and $p$ will simply be the uniform distribution.</p>
+</section>
+
+<section>
+<p>The integral above is calculating the what's called the <i>expected value</i> of \[\frac{f(\vec{x})}{p(\vec{x})} \]
+	denoted
+\[E\left[\frac{f(\vec{x})}{p(\vec{x})} \right]\]	
+</p>
+</section>
 				<section>
 					<h2>That's all folks (for now)!</h2>
 					<p>These slides were prepared by <a href="http://toperkin.github.io/NumericalMethods/lect1.html">Tony Perkins</a></p>
