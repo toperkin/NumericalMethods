@@ -221,13 +221,63 @@ Set $f(p)=0$, assume $(p-p_0)^2$ neglible:
 This gives the sequence $\{p_n\}_{n=1}^\infty$
 \[p_n = p_{n-1} - \frac{ f(p_{n-1}) }{ f'(p_{n-1}) }\]
 	</p>
-
 </section>
 
 <section>
 <img src="http://toperkin.github.io/NumericalMethods/images-lect_root_finding/newmet.png" alt="">
 </section>
 
+<section>
+<h3>Newton's Method - Fixed point formulation</h3>
+<p>Newton's method is fixed point iteration $p_n=g(p_{n-1}) where
+\[g(x) = x-\frac{f(x)}{f'(x)}\]</p>
+</section>
+
+<section>
+<p><b>Theorem</b> Let $f\in C^2[a, b]$.  If $p\in [a, b]$ is such that $f(p)=0$ and $f'(p)\neq 0$, then there exists a $\delta>0$ such that Newton's method generates a sequence $\{p_n\}_{n=1}^\infty$ converging to $p$ for any initial approximation $p_0\in [p-\delta, p+\delta]$</p>
+</section>
+
+<section>
+<h1>Bonus topic!</h1>
+</section>
+
+<section>
+<p>Consider a polynomial of degree $n$</p>
+\[p(x) = \sum_{i=0}^na_ix^i = a_0 + a_1x+a_2x^2+\cdots a_nx^n\]
+</section>
+
+<section>
+<p>How many basic operations (add, subtract, multiply and divide) does it take to evaluate the polynomial at a point $x_0$?</p>
+</section>
+
+<section>
+<h2>Horner's Method</h2>
+
+\[p(x) = a_0 + x(a_1 + x (a_2 + \cdots+ x (a_{n-1} + a_nx)\cdots ))\]
+</section>
+
+<section>
+	<h2>Moral</h2>
+</section>
+
+<section>
+	<h2>Advanced cleverness is everywhere</h2>
+	<p>Just because it is the way you where taught to evaluate something, does not mean that it is the best way to evaluate it.</p>
+</section>
+
+<section>
+<p>Now suppose you have two degree $n$ polynomials $f$ and $g$.</p>
+</section>
+
+<section><p>How many basic operations will it take to find the coefficients of their production?</p></section>
+
+<section><p>It can be done in $\mathcal{O}(n^3})$ using the fast Fourier transform.</p></section>
+
+<section><h2>Moral 2.</h2></section>
+
+<section><p>Sometimes the advanced cleverness to do a problem optimally requires mathematics well beyond the 'obvious' method.</p>
+<p>The is a paper listed in the project topics list that will explain how to do Fast Fourier Transforms.</p>
+</section>
 
 <section>
 <h2>That's all folks (for now)!</h2>
