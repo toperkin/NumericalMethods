@@ -158,7 +158,7 @@ Then, for any number $p_0$ in $[a,b]$ the sequence defined by $p_n=g(p_{n-1})$ c
 </section>
 
 <section>
-	<h2>Follow from MTV.
+	<h2>Follow from MVT.
 	</h2>
 	<p>\[g'(\zeta) = \frac{g(p)-g(q)}{p-q}\]</p>
 
@@ -195,6 +195,18 @@ Then, for any number $p_0$ in $[a,b]$ the sequence defined by $p_n=g(p_{n-1})$ c
 		</ul>
 	</p>
 </section>
+
+<section>
+	<h2>Termination criteria</h2>
+	<p>There are many ways to decide when to stop</p>
+	\[|p_n-p_{n-1}|<\varepsilon\]
+	\[\frac{|p_n-p_{n-1}|}{p_{n-1}}<\varepsilon\]
+	\[|f(p_n)|<\varepsilon\]
+	<p>None is perfect.  In real software, people use a combination.</p>
+</section>
+
+
+
 
 
 <section>
