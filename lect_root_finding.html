@@ -162,7 +162,6 @@ Then, for any number $p_0$ in $[a,b]$ the sequence defined by $p_n=g(p_{n-1})$ c
 	</p>
 </section>
 
-
 <section>
 	<h2>Follow from MTV.
 	</h2>
@@ -171,6 +170,26 @@ Then, for any number $p_0$ in $[a,b]$ the sequence defined by $p_n=g(p_{n-1})$ c
 	</p>
 </section>
 
+<section>
+	<h2>Bisection Method
+	</h2>
+	<p>
+		<ul>
+			<li>Suppose $f$ is continuos on $[a, b]$, and $f(a)$, $f(b)$ have opposite signs.</li>
+
+			<li>By the IVT, there exists an $x_0$ in $(a, b)$ with $f(x_0)=0$</li>
+
+			<li>Divide the interval $[a, b]$ by computing the midpoint
+			\[p=(a+b)/2\]</li>
+
+			<li>If $f(p)$ has the same sign as $f(a)$, consider new interval $[p, b]$</li>
+
+			<li>If $f(p)$ has the same sign as $f(b)$, consider new interval $[a, p]$</li>
+
+			<li>Repeat until the interval is small enough to approximate $x_0$ well.</li>
+		</ul>
+	</p>
+</section>
 
 
 <section>
