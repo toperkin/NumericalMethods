@@ -74,21 +74,28 @@
 	</p>
 </section>
 
-
 <section>
 <h3>proof.</h3><p>Consider $f(x)=g(x)-x$.  As $g$ is continuous, so must $f$ be.
 </p>
 <p>
-What happens at the end points?  If $g(a)=a$, we're done.  $g(a)\nless a$ otherwise $g(a)\not\in [a,b]$  So \[g(a)>a \Leftrightarrow f(a)>0\]
+What happens at the end points?  If $g(a)=a$, we're done.  $g(a)\nless a$ otherwise $g(a)\not\in [a,b]$.  So \[g(a)>a \Leftrightarrow f(a)>0\]
 </p>
 <p>
-If $g(b)=b$, we're done.  $g(b)\ngtr b$ otherwise $g(b)\not\in [a,b]$  So \[g(b)< b \Leftrightarrow f(b)>0\]
+If $g(b)=b$, we're done.  $g(b)\ngtr b$ otherwise $g(b)\not\in [a,b]$.  So \[g(b)< b \Leftrightarrow f(b)< 0\]
 </p>
 <p>
 By the <i>intermediate value theorem</i> $f$ must have a zero, and consequentally $g$ must have a fixed point.
 </p>
 </section>
 
+<section>
+	<h2>Uniqueness of fixed points.
+	</h2>
+	<p>Suppose $g\in C[a, b]$ and $g(x)\in [a, b]$ for all $x\in [a, b]$. If, in addition, $g'(x)$ exists on $(a, b)$, and a positive constant $k < 1$ exists with
+		\[|g'(x)| < k \text{ for all } x\in (a, b)\]
+then the fixed point in $[a, b]$ is unique.
+	</p>
+</section>
 
 
 
