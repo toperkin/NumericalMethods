@@ -48,6 +48,14 @@
 					</p>
 				</section>
 
+<section>
+	<h2>Three algorithms to implement.</h2>
+	<ol>
+		<li>Fixed point iteration</li>
+		<li>Bisection method</li>
+		<li>Newton's method</li>
+	</ol>
+</section>
 
 <section>
 	<h2>Fixed points.
@@ -98,7 +106,6 @@ then the fixed point in $[a, b]$ is unique.
 	</p>
 </section>
 
-
 <section>
 	<h3>proof.</h3><p>Suppose $p$ and $q$ are both fixed points in $[a, b]$. Then the Mean Value Theorem implies there exists a $\zeta$ between $p$ and $q$ with
 		\[g'(\zeta) = \frac{g(p)-g(q)}{p-q} = \frac{p-q}{p-q} = 1\]
@@ -116,6 +123,55 @@ a contradiction.
 	<li>Sperner's lemma</li>
 	</ul>
 </section>
+
+<section>
+	<h2>Fixed-Point Iteration</h2>
+	<p>For initial $p_0$, generate the sequence ${p_n}_{n=0}$\infty$ by $p_n=g(p_{n-1})$.
+	If the sequence converges to $p$, then
+
+\[p = \lim_{n\rightarrow \infty}p_n = \lim_{n\rightarrow \inftyg(p_n) = g(\lim_{n\rightarrow \inftyp_n) = g(p) \]
+	</p>
+</section>
+
+
+<section>
+	<h2>Fixed-Point Theorem.
+	</h2>
+	<p>Suppose $g\in C[a, b]$ and $g(x)\in [a, b]$ for all $x\in [a, b]$.</p>
+	<p>If, in addition, $g'(x)$ exists on $(a, b)$, and a positive constant $k < 1$ exists with
+		\[|g'(x)| < k \text{ for all } x\in (a, b).\]
+Then, for any number $p_0$ in $[a,b]$ the sequence defined by $p_n=g(p_{n-1})$ converges to the unique fixed point $p$ in $[a, b]$.
+	</p>
+</section>
+
+
+<section>
+	<h2>Corollary.
+	</h2>
+	<p>Suppose $g$ satisfies the hypothesis above, then bounds for the error are given by
+		\[|p_n-p| \le k^n \max{p_0-a, b-p_0}\]
+		\[|p_n-p| \le \frac{k^n}{1-k} |p_1-p_0|\]
+	</p>
+</section>
+
+<section>
+	<h2>Follow from MTV.
+	</h2>
+	<p>\[g'(\zeta) = \frac{g(p)-g(q)}{p-q}\]
+		\[|g(p)-g(q)| = |g'(\zeta)|\cdot |p-q| \le k\cdot |p-q| \]
+	</p>
+</section>
+
+
+<section>
+	<h2>Follow from MTV.
+	</h2>
+	<p>\[g'(\zeta) = \frac{g(p)-g(q)}{p-q}\]
+		\[|g(p)-g(q)| = |g'(\zeta)|\cdot |p-q| \le k\cdot |p-q| \]
+	</p>
+</section>
+
+
 
 <section>
 <h2>That's all folks (for now)!</h2>
