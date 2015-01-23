@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Numerical Methods</title>
+
+		<meta name="description" content="Lecture Polynomials">
+		<meta name="author" content="Tony Perkins">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/serif.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1># Numerical Methods with Python</h1>
+					<h3>Differentiation and Integration</h3>
+					<p>
+						<small>Created by <a href="http://toperkin.github.io/nm.html">Tony Perkins</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>A hard problem.
+					</h2>
+				</section>
+
+<section>
+<p>A sheet of corrugated roofing is constructed by pressing a flat sheet of aluminum into one
+	whose cross section has the form of a sine wave.</p>
+<img src="http://toperkin.github.io/NumericalMethods/images-lect_diff_int/schets.gif" alt="">
+
+</section>
+
+<section>
+<p>
+	A corrugated sheet $4$ ft long is needed, the height of each wave is $1$ in. from the center
+	line, and each wave has a period of approximately $2\pi$ in. The problem of finding the length
+	of the initial flat sheet is one of determining the length of the curve given by $f(x) = \sin(x)$
+	from $x = 0$ in. to $x = 48$ in. </p>
+</section>
+
+<section>
+		<p>From calculus we know that this length is
+
+\[L = \int_0^48 \sqrt{1+(f'(x))^2}dx= \int_0^48 \sqrt{1+(\cos(x))^2}dx,\]
+	so the problem reduces to evaluating this integral. Although the sine function is one of
+	the most common mathematical functions, the calculation of its length involves an elliptic
+	integral of the second kind, which cannot be evaluated explicitly.</p>
+</section>
+
+<section>
+	<h2>Numerical Differentiation
+	</h2>
+	<p>
+	</p>
+</section>
+
+<section>
+	<h3>Forward and Backward Differences
+	</h3>
+	<p>Inspired by the definition of the derivative:
+
+		<br /> <br />
+
+		\[f'(x_0)=\lim_{h\rightarrow 0}\frac{f(x_0+h)-f(x_0)}{h},\]
+
+		choose a small $h$ and approximate
+
+		<br /> <br />
+
+		\[f'(x_0)\approx \frac{f(x_0+h)-f(x_0)}{h}.\]
+	</p>
+</section>
+
+<section>
+	<h3>Lagrange polynomial
+	</h3>
+	<br /> <br />
+
+	<p>The error term for the linear Lagrange polynomial gives:
+
+<br /> <br />
+
+
+		\[f'(x_0)= \frac{f(x_0+h)-f(x_0)}{h} -\frac{h}{2}f''(\zeta).\]
+
+<br /> <br />
+
+		Also known as the <i>forward-difference</i> formula if $h > 0$ and the
+		<i>backward-difference</i> formula if $h < 0$
+	</p>
+</section>
+
+
+<section>
+	<h3>Other common formulas
+	</h3>
+	<p>Using equally spaced points with $h=x_{j+1}-x_j$, we have the <i>three-point formulas</i>:
+	</p>
+	\[f'(x_0) = \frac{1}{2h}[-3f(x_0) + 4f(x_0+h)-f(x_0+2h)]+\frac{h^2}{3}f^{(3)}(\zeta_0)\]
+	\[f'(x_0) = \frac{1}{2h}[-f(x_0-h)-f(x_0+h)]-\frac{h^2}{6}f^{(3)}(\zeta_1)\]
+	\[f'(x_0) = \frac{1}{2h}[f(x_0-2h) - 4f(x_0-h)+3f(x_0)]+\frac{h^2}{3}f^{(3)}(\zeta_2)\]
+	\[f'(x_0) = \frac{1}{h^2}[f(x_0-h) -2f(x_0)+f(x_0+h)]-\frac{h^2}{12}f^{(4)}(\zeta_3)\]
+</p>
+</section>
+
+<section>
+	<p>
+	and  the <i>five-point formula</i>:
+	</p>
+	\[f'(x_0) = \frac{1}{12h}[f(x_0-2h) -8f(x_0-h) \]
+	\[\qquad + 8f(x_0+h)-f(x_0+2h)]+\frac{h^4}{30}f^{(5)}(\zeta)\]
+
+</section>
+
+<section>
+	<h3>These all come from Taylor series.
+	</h3>
+\[f(x) = \sum_{i=0}^\infty \frac{f^{(i)}(x_0)}{i!} (x-x_0)^i\]
+\[f(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{f^{(2)}(x_0)}{2!} (x-x_0)^2 \]
+\[\qquad + \frac{f^{(3)}(x_0)}{3!} (x-x_0)^3+ \frac{f^{(4)}(x_0)}{4!} (x-x_0)^4 \]
+\[\qquad + \frac{f^{(5)}(x_0)}{5!} (x-x_0)^5 + \cdots\]
+<p>and plug in $x_0\pm h$, $x_0\pm 2h$, $\ldots$</p>
+</section>
+
+<section>
+	\[(eq1)\qquad f(x_0+h) = f(x_0) + f'(x_0)h + \frac{f^{(2)}(x_0)}{2!} h^2 \]
+	\[\qquad\qquad + \frac{f^{(3)}(x_0)}{3!}h^3+ \frac{f^{(4)}(x_0)}{4!}h^4 + \frac{f^{(5)}(x_0)}{5!}h^5 + \cdots\]
+
+	<br /> <br />
+
+	\[(eq2)\qquad f(x_0-h) = f(x_0) - f'(x_0)h + \frac{f^{(2)}(x_0)}{2!} h^2 \]
+	\[\qquad\qquad - \frac{f^{(3)}(x_0)}{3!}h^3+ \frac{f^{(4)}(x_0)}{4!}h^4 -  \frac{f^{(5)}(x_0)}{5!}h^5 + \cdots\]
+</section>
+
+<section>
+	\[(eq3)\qquad f(x_0+2h) = f(x_0) + f'(x_0)2h + \frac{f^{(2)}(x_0)}{2!} 4h^2 \]
+	\[\qquad\qquad + \frac{f^{(3)}(x_0)}{3!}8h^3+ \frac{f^{(4)}(x_0)}{4!}16h^4 + \frac{f^{(5)}(x_0)}{5!}32h^5 + \cdots\]
+
+	<br /> <br />
+
+	\[(eq4)\qquad f(x_0-2h) = f(x_0) - f'(x_0)2h + \frac{f^{(2)}(x_0)}{2!} 4h^2 \]
+	\[\qquad\qquad - \frac{f^{(3)}(x_0)}{3!}8h^3+ \frac{f^{(4)}(x_0)}{4!}16h^4 -  \frac{f^{(5)}(x_0)}{5!}32h^5 + \cdots\]
+</section>
+
+<section>
+	<h2>A clever combination of equations: </h2>
+
+	<br /> <br />
+
+	\[(eq4)-8(eq2)+8(eq1)-(eq3) = 12hf'(x_0) + \mathcal{O}(h^4)\]
+
+	<br /> <br />
+
+	<p>and solve for $f'(x_0)$ to get the five point formula</p>
+
+</section>
+
+<section>
+	<h2>Numerical Integration
+	</h2>
+	<p>numerical quadrature
+	</p>
+</section>
+
+<section>
+	<h2>Trapezoidal Rule
+	</h2>
+	<p>1st Lagrange polynomial</p>
+	<p>$x_0=a$, $x_1=b$, $h=b-a$ </p>
+	\[ \int_a^b f(x)dx = \frac{h}{2}[f(x_0)+f(x_1)] - \frac{h^3}{12}f''(\zeta) \]
+</section>
+
+<section>
+	<h2>Simpson's Rule
+	</h2>
+	<p>2st Lagrange polynomial</p>
+	<p>$x_0=a$, $x_2=b$, $x_1=a+h$, $h=(b-a)/2$ </p>
+	\[ \int_a^b f(x)dx = \frac{h}{3}[f(x_0)+4f(x_1)+f(x_2)] - \frac{h^5}{90}f^{(4)}(\zeta) \]
+</section>
+
+<section>
+	<p>The <i>degee of accuracy</i> or <i>precision</i> of a quadrature formula is the largest positive integer $n$ such that the formula is exact for $x^k$ for each $k=0, 1, \ldots, n$.</p>
+</section>
+
+<section>
+	<h2>Monte Carlo Integration</h2>
+	<p>Monte Carlo integration is a powerful method for computing the value of complex
+	integrals using probabilistic techniques.</p>
+</section>
+
+<section>
+	<p>probabilistic technique = non-deterministic</p>
+</section>
+
+
+<section>
+	<p>It's a bit complicated and requires some probability but it's really neat, so I'm going to briefly talk about it anyway.</p>
+</section>
+
+<section>
+		<p>Assume we are trying to estimate the integral of a
+			function $f$ over some domain $D$:</p>
+			\[F = \int\limits_D f(\vec{x})d\mu(\vec{x})\]
+</section>
+
+<section>
+<p>We use vector notation to indicate that  $f$ need not be one-dimensional.  In fact, Monte Carlo techniques are used mostly for higher-dimensional integrals,
+	or integrals that cannot be evaulated analytically.</p>
+</section>
+
+<section>
+<p>Assume that we have a PDF $p$ defined over a domain $D$. Then the above
+integral is equivalent to</p>
+\[F = \int\limits_D \frac{f(\vec{x})}{p(\vec{x})} p(\vec{x}) d \mu(\vec{x})\]
+</section>
+
+<section>
+<p>In the homework, we'll be working over an interval and $p$ will simply be the <b>uniform distribution</b>.</p>
+</section>
+
+<section>
+<p>The integral above is calculating the what's called the <i>expected value</i> of \[\frac{f(\vec{x})}{p(\vec{x})} \qquad \text{denoted} \qquad E\left[\frac{f(\vec{x})}{p(\vec{x})} \right]\]
+</p>
+</section>
+
+<section>
+<p>We can estimate the value of
+	\[E\left[\frac{f(\vec{x})}{p(\vec{x})} \right]\]
+	by generating a number of random
+	samples according to $p$, computing $f/p$ for each sample, and finding the average of these values.
+</section>
+
+<section>
+	<h2>Practical example:</h2>
+	\[\int_a^b f(x) dx\]
+</section>
+
+<section>
+<p>Let $p$ be uniform on $[a, b]$ so
+\[p(x) = \begin{cases} \frac{1}{b-a} &\colon x\in [a, b] \\ 0 &\colon \text{else}\end{cases}\]</p>
+</section>
+
+<section>
+<p>Let $x_1, x_2, x_3, \ldots, x_N$ be a random sample (uniformly) from $[a, b]$ </p>
+</section>
+
+<section>
+\[\int_a^b f(x) dx \approx \frac{1}{N} \sum_{i=1}^N \frac{f(x_i)}{p(x_i)}=\frac{1}{N} \sum_{i=1}^N \frac{f(x_i)}{\frac{1}{b-a}} = \frac{b-a}{N} \sum_{i=1}^N f(x_i)\]
+</section>
+<section>
+	<p>More precisely, the <i>Law of Large Numbers</i> provides:</p>
+	\[\int_a^b f(x) dx = \lim_{N\rightarrow \infty}\frac{b-a}{N} \sum_{i=1}^N f(x_i)\]
+	<p>Notice that this is essentially the same definition from Calc 1, except we only specify that the $x_i$ are uniform on $[a, b]$ instead of the left-end points of a partition of $[a, b]$.</p>
+</section>
+
+				<section>
+					<h2>That's all folks (for now)!</h2>
+					<p>These slides were prepared by <a href="http://toperkin.github.io/nm.html">Tony Perkins</a></p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
