@@ -312,8 +312,8 @@
 					</p>
 <pre><code>
 for i in range(n):
-	for j in range(i):
-		Q[i,j](x) = ( (x-x[i-j])*Q[i, j-1](x) - (x-x[i])*Q[i-1,j-1])/(x[i]-x[i-j])
+		for j in range(i):
+				Q[i,j](x) = ( (x-x[i-j])*Q[i, j-1](x) - (x-x[i])*Q[i-1,j-1])/(x[i]-x[i-j])
 </code></pre>
 				</section>
 
