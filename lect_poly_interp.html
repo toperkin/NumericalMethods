@@ -183,7 +183,7 @@
 				<section>
 					<h2>
 					</h2>
-					<p><b>continued...</b> So
+					<p>
 					</p><br />
 					\[f(5)\approx P_{1, 2, 4}(5) = \frac{(5-3)(5-6)}{(2-3)(2-6)}e^2 + \frac{(5-2)(5-6)}{(3-2)(3-6)}e^3\]<br />
 					\[ + \frac{(5-2)(5-3)}{(6-2)(6-3)}e^6\]<br />
@@ -193,15 +193,16 @@
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p>Now we will describe a method for recursively generating Lagrange polynomial approximations.
 					</p>
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
-					</p>
+					<p><b>Theorem</b> Let $f$ be defined at $x_0, x_1, \ldots, x_k$, and let $x_j$ and $x_i$ be two distinct numbers in this set. Then
+						\[P(x) = \frac{(x-x_j)P_{0,1,\ldots,j-1,j+1, \ldots, k}(x) - (x-x_i)P_{0,1,\ldots,j-1,j+1, \ldots, k}(x) }{(x_i-x_j)}\]
+						is the $k^{\text{th}}$ Lagrange polynomial that interpolates $f$ at the $k+1$ points $x_0, x_1,\ldots, x_k$.</p>
 				</section>
 
 				<section>
