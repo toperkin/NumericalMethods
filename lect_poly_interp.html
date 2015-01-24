@@ -134,8 +134,8 @@
 				<section>
 					<h2>Lagrange Polynomial Error Term
 					</h2>
-					<p>$x_0, \ldots, x_n$ distinct in $[a, b]$, $f\in C^{n+1}[a,b]$, then for $x\in [a, b]$ there exists $\zeta(x)$ in $(a,b)$ with
-						\[f(x)=P(x)+\frac{f^{(n+1)}(\zeta(x))}{(n+1)!}(x-x_0)(x-x_1)\cdots(x-x_n)\]
+					<p>$x_0, \ldots, x_n$ distinct in $[a, b]$, $f\in C^{n+1}[a,b]$, then for $x\in [a, b]$ there exists $\xi(x)$ in $(a,b)$ with
+						\[f(x)=P(x)+\frac{f^{(n+1)}(\xi(x))}{(n+1)!}(x-x_0)(x-x_1)\cdots(x-x_n)\]
 						where $P(x)$ is the interpolating polynomial.
 					</p>
 				</section>
@@ -493,21 +493,25 @@ return Q[n, n]
 				<section>
 					<h2>
 					</h2>
-					<p>
-					</p>
+					<p><b>Theorem.</b> If $f \in C^1[a, b]$ and $x_0, \ldots , x_n \in [a, b]$ are distinct, the unique polynomial of least degree agreeing with $f$ and $f'$ at $x_0,\ldots,x_n$ is the Hermite polynomial of degree at most $2n + 1$ given by
+					</p><br />
+					\[H_{2n+1}(x) = \sum_{j=0}^nf(x_j)H_{n,j}(x) +\sum_{j=0}^nf'(x_j)\hat{H}_{n,j}(x) \]
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
-					</p>
+					<p> where for $L_{n,j}$ denotes the $j^{\text{th}}$ Lagrange coefficient polynomial of degree $n$, </p><br />
+					\[H_{n,j}(x) = [1-2(x-x_j)L'_{n,j}(x_j)]L^2_{n,j}(x)\]
+					\[\hat{H}_{n,j}(x) = (x-x_j)L^_{n,j}(x)\]
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p>Moverover, if $f\in C^{2n+2}[a, b]$, then</p><br />
+						\[f(x) = H_{2n+1}(x) + \frac{f^{(2n+2)}(\xi(x))}{(2n+2)!}\prod_{i=0}^n(x-x_i)^2\]<br />
+			<p>for some (generally unknown) $\xi(x)$ in the interval $(a, b)$.
 					</p>
 				</section>
 
