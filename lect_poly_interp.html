@@ -518,15 +518,49 @@ return Q[n, n]
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p>This lecture series concerned the approximation of arbitrary functions on closed intervals using a single polynomial. However, high-degree polynomials can oscillate erratically, that is, a minor fluctuation over a small portion of the interval can induce large fluctuations over the entire range.
 					</p>
 				</section>
 
 
 <section>
+	<h2> Example.
+	</h2>
+	<p> Let's approximate the top curve of this duck.
+	</p>
+	<img src="http://toperkin.github.io/NumericalMethods/assets-lect_poly_interp/duck1.png" alt="" style="width: 900px;">
+</section>
+
+
+<section>
 	<h2>
 	</h2>
-	<p>
+	<p>So we put it on some graph paper and pick points.
+	</p>
+	<img src="http://toperkin.github.io/NumericalMethods/assets-lect_poly_interp/duck2.png" alt="" style="width: 900px;">
+	<img src="http://toperkin.github.io/NumericalMethods/assets-lect_poly_interp/duck_data.png" alt="" style="width: 900px;">
+</section>
+
+<section>
+	<h2>
+	</h2>
+	<p>This is what we are hoping to calculate when you find the approximating poly
+	</p>
+	<img src="http://toperkin.github.io/NumericalMethods/assets-lect_poly_interp/duck_spline.png" alt="" style="width: 900px;">
+</section>
+
+<section>
+	<h2>
+	</h2>
+	<p>But this is what we actually get
+	</p>
+	<img src="http://toperkin.github.io/NumericalMethods/assets-lect_poly_interp/duck_poly.png" alt="" style="width: 900px;">
+</section>
+
+<section>
+	<h2>
+	</h2>
+	<p>That's plainly terrible.  In the next lecture series we'll study something called splines ($=$ piece-wise polynomial approximations).  This will allow us to get the duck we want.
 	</p>
 </section>
 
