@@ -261,7 +261,7 @@
 				<section>
 					<h2>
 					</h2>
-					<p>Note, however, that as an array is being constructed, only two subscripts are needed. Proceeding down the table corresponds to using consecutive points xi with larger i, and proceeding to the right corresponds to increasing the degree of the interpolating polynomial. Since the points appear consecutively in each entry, we need to describe only a starting point and the number of additional points used in constructing the approximation.
+					<p>Note, however, that as an array is being constructed, only two subscripts are needed. Proceeding down the table corresponds to using consecutive points $x_i$ with larger $i$, and proceeding to the right corresponds to increasing the degree of the interpolating polynomial. Since the points appear consecutively in each entry, we need to describe only a starting point and the number of additional points used in constructing the approximation.
 					</p>
 				</section>
 
@@ -282,32 +282,39 @@
 				</section>
 
 				<section>
-					<h2>
+					<h2>Neville's Iterated Interpolation
 					</h2>
 					<p>
+						To evaluate the interpolating polynomial $P$ on the $n + 1$ distinct numbers $x_0, \ldots , x_n$ at the number $x$ for the function $f$:
 					</p>
 				</section>
 
 				<section>
-					<h2>
+					<h2>Input:
 					</h2>
-					<p>
-					</p>
+						<ul>
+							<li>number $x$ we want to know $P$ at</li>
+							<li>an array $x[i]$, the $x$ values of the points</li>
+							<li>an array $y[i] = Q[i,0]$ the $y$ values of the points and first column of $Q$.</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2>
+					<h2>Output:
 					</h2>
-					<p>
+					<p>the table $Q$ with $P(x) = Q_{n,n}$
 					</p>
 				</section>
 
 
 				<section>
-					<h2>
-					</h2>
-					<p>
+					<p><b>sketch.</b>
 					</p>
+					<code>
+					for i in range(n):
+						for j in range(i):
+							Q[i,j](x) = ( (x-x[i-j])*Q[i, j-1](x) - (x-x[i])*Q[i-1,j-1])/(x[i]-x[i-j])
+					</code>
 				</section>
 
 				<section>
