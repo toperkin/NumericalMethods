@@ -252,31 +252,33 @@
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p>The $P$ notation used below is cumbersome because of the number of subscripts used to represent the entries.
 					</p>
 					<img src="http://toperkin.github.io/NumericalMethods/assets-lect_poly_interp/nev1.png" alt="" style="width: 700px;">
 				</section>
 
+
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p>Note, however, that as an array is being constructed, only two subscripts are needed. Proceeding down the table corresponds to using consecutive points xi with larger i, and proceeding to the right corresponds to increasing the degree of the interpolating polynomial. Since the points appear consecutively in each entry, we need to describe only a starting point and the number of additional points used in constructing the approximation.
+					</p>
+				</section>
+
+				<section>
+					<h2>
+					</h2>
+					<p>To avoid the multiple subscripts, we let $Q_{i,j}(x)$, for $0 \le j \le i$, denote the interpolating polynomial of degree $j$ on the $(j + 1)$ numbers $x_{i−j}, x_{i−j+1}, \ldots , x_{i−1}, x_i$; that is,
+					</p>
+					\[Q_{i,j} = P_{i-j, i-j+1, \ldots, i-1, i}.\]
+				</section>
+
+				<section>
+					<h2>
+					</h2>
+					<p>Using this notation provides the $Q$ notation array below
 					</p>
 					<img src="http://toperkin.github.io/NumericalMethods/assets-lect_poly_interp/nev2.png" alt="" style="width: 900px;">
-				</section>
-
-				<section>
-					<h2>
-					</h2>
-					<p>
-					</p>
-				</section>
-
-				<section>
-					<h2>
-					</h2>
-					<p>
-					</p>
 				</section>
 
 				<section>
