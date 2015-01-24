@@ -389,7 +389,7 @@ return Q[n, n]
 				<section>
 					<h2>
 					</h2>
-					<p>The <i>first divided difference</i> of the function $f$ with respect to $x_i$ and $x_{i+1}, denoted $f[x_i, x_{i+1}]$, is:
+					<p>The <i>first divided difference</i> of the function $f$ with respect to $x_i$ and $x_{i+1}$, denoted $f[x_i, x_{i+1}]$, is:
 					</p><br />
 					\[f[x_i, x_{i+1}]=\frac{f[x_{i+1}]-f[x_i]}{x_{i+1}-x_i}\]
 				</section>
@@ -407,15 +407,17 @@ return Q[n, n]
 					</h2>
 					<p>The $k^{\text{th}}$ divided difference relative to $x_i, x_{i+1}, \ldots, x_{i+k}$ is
 					</p><br />
-					\[f[x_i, x_{i+1}, \ldots, x_{i+k-1}, x_{i+k}] = \frac{f[x_{i+1}, \ldots, x_{i+k-1}, x_{i+k}]-f[x_i, x_{i+1}, \ldots, x_{i+k-1}, x_{i+k-1}]}{ x_{i+k}-x_i }\]
+					\[f[x_i, x_{i+1}, \ldots, x_{i+k-1}, x_{i+k}] =\] <br />
+					\[ \frac{f[x_{i+1}, \ldots, x_{i+k-1}, x_{i+k}]-f[x_i, x_{i+1}, \ldots, x_{i+k-1}, x_{i+k-1}]}{ x_{i+k}-x_i }\]
 				</section>
 
 				<section>
 					<h2>The End.
 					</h2>
-					<p>The single <i> nth divided difference</i>
+					<p>The process terminates with the single <i> nth divided difference</i>
 					</p><br />
-					\[ f[x_0,x_1, \ldots, x_{n-1},x_n] = \frac{f[x_1, \ldots, x_{n-1},x_n]-f[x_0,x_1, \ldots, x_{n-1}]}{x_n-x_0}\]
+					\[ f[x_0,x_1, \ldots, x_{n-1},x_n] =\]<br />
+					\[ \frac{f[x_1, \ldots, x_{n-1},x_n]-f[x_0,x_1, \ldots, x_{n-1}]}{x_n-x_0}\]
 				</section>
 
 				<section>
