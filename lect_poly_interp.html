@@ -208,28 +208,33 @@
 				<section>
 					<h2>
 					</h2>
-					<p><i>proof.</i> Let $Q \equiv P_{0,1,\ldots,j-1,j+1, \ldots, k}(x)$ and $\hat{Q}\equiv P_{0,1,\ldots,i-1,i+1, \ldots, k}(x)$ 
+					<p><i>proof (pt i).</i> Let $Q \equiv P_{0,1,\ldots,j-1,j+1, \ldots, k}(x)$ and $\hat{Q}\equiv P_{0,1,\ldots,i-1,i+1, \ldots, k}(x)$.  Since $Q(x)$ and $\hat{Q}(x)$ are polynomials of degree $k-1$ or less, $P(x)$ is of degree at most $k$.
 					</p>
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
-					</p>
+					<p><i>proof (pt ii).</i> First note that $\hat{Q}(x_i)=f(x_i)$, implies that
+					</p><br />
+					\[P(x_i) =  \frac{(x_i-x_j)\hat{Q}(x_i) - (x_i-x_i)Q(x_i) }{(x_i-x_j)}\]<br />
+					\[= \frac{(x_i-x_j)}{(x_i-x_j)}f(x_i) = f(x_i)\]
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p><i>proof (pt iii).</i>  Similarly, since $\hat{Q}(x_j)=f(x_j)$, we have $P(x_j)=f(x_j)$.
 					</p>
+					<p>In addition, if $0\le r\le k$, and $r$ is neither $i$ nor $j$, then $Q(x_r)=\hat{Q}(x_r)=f(x_r)$.  So</p><br />
+					\[P(x_r) =  \frac{(x_r-x_j)\hat{Q}(x_r) - (x_i-x_i)Q(x_r) }{(x_i-x_j)}\]<br />
+					\[= \frac{(x_i-x_j)}{(x_i-x_j)}f(x_r) = f(x_r)\]
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p><i>proof (pt iv).</i> By definition, $P_{0,1,\ldots, k}(x)$ is the unique polynomial of degree at most $k$ that agrees with $f$ at $x_0, x_1, \ldots, x_k$.  Thus $P \equiv P_{0,1,\ldots, k}$. $\box$    
 					</p>
 				</section>
 
