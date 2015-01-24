@@ -126,7 +126,7 @@
 
 				<section>
 				<p>
-					The interpolation formula named for Joseph Louis Lagrange (1736–1813) was likely known by Isaac Newton around 1675, but it appears to first have been published in 1779 by Edward Waring (1736–1798). Lagrange wrote extensively on the subject of interpolation and his work had significant influence on later mathematicians. He published this result in 1795.</p>	
+					The interpolation formula named for Joseph Louis Lagrange (1736–1813) was likely known by Isaac Newton around 1675, but it appears to first have been published in 1779 by Edward Waring (1736–1798). Lagrange wrote extensively on the subject of interpolation and his work had significant influence on later mathematicians. He published this result in 1795.</p>
 				</section>
 
 
@@ -477,15 +477,17 @@ return Q[n, n]
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p><i>Osculating polynomials</i> generalize both the Taylor polynomials and the Lagrange polynomials. Suppose that we are given $n + 1$ distinct numbers $x_0, x_1, \ldots, x_n$ in $[a, b]$ and nonnegative integers $m_0, m_1, \ldots, m_n$, and $m = \max\{m_0, m_1, \ldots , m_n\}$.
 					</p>
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p>The osculating polynomial approximating a function $f \in C^m[a, b]$ at $x_i$, for each $i = 0, \ldots, n$, is the polynomial of least degree that has the same values as the function $f$ and all its derivatives of order less than or equal to $m_i$ at each $x_i$. The degree of this osculating polynomial is at most
 					</p>
+					\[M= \sum_{i=0}^n m_i +n\]
+					<p>because the number of conditions to be satisfied is 􏰎$\sum_{i=0}^n m_i + (n + 1)$, and a polynomial of degree $M$ has $M + 1$ coefficients that can be used to satisfy these conditions.</p>
 				</section>
 
 				<section>
