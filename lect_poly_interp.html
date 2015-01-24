@@ -313,15 +313,39 @@
 <pre><code>
 for i in range(n):
     for j in range(i):
-        Q[i,j] = (x-x[i-j])*Q[i, j-1] - (x-x[i])*Q[i-1,j-1]
-        Q[i,j] /= x[i]-x[i-j]
+        Q[i, j] = (x-x[i-j])*Q[i, j-1] - (x-x[i])*Q[i-1, j-1]
+        Q[i, j] /= x[i]-x[i-j]
 
 return Q[n, n]
 </code></pre>
 				</section>
 
 				<section>
+					<h2>Divided Differences
+					</h2>
+					<p>Iterated interpolation was used in the previous section to generate successively higher-degree polynomial approximations at a specific point. Divided-difference methods introduced in this section are used to successively generate the polynomials themselves.
+					</p>
+				</section>
+
+				<section>
 					<h2>
+					</h2>
+					<p>Suppose that $P_n(x)$ is the nth Lagrange polynomial that agrees with the function $f$ at the distinct numbers $x_0, x_1, \ldots , x_n$. Although this polynomial is unique, there are alternate algebraic representations that are useful in certain situations.
+					</p>
+				</section>
+
+
+				<section>
+					<h2>
+					</h2>
+					<p>The divided differences of $f$ with respect to $x_0, x_1, \ldots , x_n$ are used to express $P_n(x)$ in the form
+					</p>
+					\[P_n(x) = a_0+a_1(x-x_0) + a_2(x-x_0)(x-x_1)+\cdots +a_n(x-x_0)(x-x_1)\cdots(x-x_n-1)\]
+					<p>for appropriate constants $a_0, a_1, \ldots, a_n$.</p>
+				</section>
+
+				<section>
+					<h2>How do we find these constants?
 					</h2>
 					<p>
 					</p>
@@ -330,30 +354,10 @@ return Q[n, n]
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p>Plug in $x=x_0$ into
 					</p>
-				</section>
-
-
-				<section>
-					<h2>
-					</h2>
-					<p>
-					</p>
-				</section>
-
-				<section>
-					<h2>
-					</h2>
-					<p>
-					</p>
-				</section>
-
-				<section>
-					<h2>
-					</h2>
-					<p>
-					</p>
+					\[P_n(x) = a_0+a_1(x-x_0) + a_2(x-x_0)(x-x_1)+\cdots +a_n(x-x_0)(x-x_1)\cdots(x-x_n-1)\]<br /><p> to get </p><br />
+					\[a_0 = P_n(x_0)=f(x_0)\]
 				</section>
 
 				<section>
