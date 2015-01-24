@@ -78,21 +78,26 @@
 					<h2>Weierstrass Approximation Theorem:
 					</h2>
 					<p>For any $f\in C[a, b]$ and any $\varepsilon >0$, there is a polynomial $P(x)$ such that
-						\[ |f(x)-P(x)|< \varepsilon \text{ for all } x \text{ in } [a, b]\] 
+						\[ |f(x)-P(x)|< \varepsilon \text{ for all } x \text{ in } [a, b]\]
 					</p>
 				</section>
 
 				<section>
 					<h2>
 					</h2>
-					<p>
+					<p><b>Weierstrass Approximation Theorem</b> basically says that polynomials are good at approximating general functions.
 					</p>
 				</section>
 
 				<section>
-					<h2>
+					<h2>Lagrange Polynomial
 					</h2>
-					<p>
+					<p>If $x_0, \ldots, x_n$ are distinct and $f$ is given at the numbers a unique polynomial $P(x)$ of degree $\le n$ exists with
+						\[f(x_n)=P(x_n) \text{ for } k=0, \ldots n\]
+						The polynomial is
+						\[P(x) = f(x_0)L_{n,0}(x) + f(x_1)L_{n,1}(x) + \cdots + f(x_n)L_{n,n}(x) = \sum_{k=0}^nf(x_k)L_{n,k}(x)\]
+						where
+						\[L(n,k) = \prod_{i \neq k}\frac{(x-x_i)}{(x_k-x_i)}\]
 					</p>
 				</section>
 
