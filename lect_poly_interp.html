@@ -313,8 +313,10 @@
 <pre><code>
 for i in range(n):
     for j in range(i):
-        Q[i,j](x) = (x-x[i-j])*Q[i, j-1](x) - (x-x[i])*Q[i-1,j-1]
-        Q[i,j](x) /= x[i]-x[i-j]
+        Q[i,j] = (x-x[i-j])*Q[i, j-1] - (x-x[i])*Q[i-1,j-1]
+        Q[i,j] /= x[i]-x[i-j]
+
+return Q[n, n]
 </code></pre>
 				</section>
 
