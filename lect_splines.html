@@ -177,7 +177,7 @@ $S'(x_0) = f'(x_0)$ and $S'(x_n) = f'(x_n)$ (<b>clamped</b> boundary).</li>
 <section>
 	<h2>
 	</h2>
-	<p>Let $f\in C^4[a, b] with $\max_a\le x\le b |f^{(4)}(x)|=M.  If $S$ is the unique clamped cubic spline interpolant to $f$ with respect to the nodes
+	<p>Let $f\in C^4[a, b]$ with $\max_{a\le x\le b} |f^{(4)}(x)|=M$.  If $S$ is the unique clamped cubic spline interpolant to $f$ with respect to the nodes
 		\[a = x_0 < x_1 < \cdots < x_n = b,\]
 then for all $x$ in $[a, b]$
 \[|f(x)-S(x)|\le \frac{5M}{384}\max_{0\le j\le n-1}(x_{j+1}-x_j)^4.\]
