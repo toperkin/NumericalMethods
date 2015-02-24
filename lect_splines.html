@@ -232,9 +232,31 @@ then for all $x$ in $[a, b]$
 <section>
 	<h2>
 	</h2>
-	<p>	The Bézier curves that bear his name have the advantage of being based on a rigorous mathematical theory that does not need to be explicitly recognized by the practitioner who simply wants to make an aesthetically pleasing curve or surface. These are the curves that are the basis of the powerful Adobe Postscript system, and produce the freehand curves that are generated in most sufficiently powerful computer graphics packages.</p>
+	<p>	The Bézier curves that bear his name have the advantage of being based on a rigorous mathematical theory that does not need to be explicitly recognized by the practitioner who simply wants to make an aesthetically pleasing curve or surface. These are the curves that are the basis of the Adobe Postscript system.</p>
 </section>
 <section>
+	<h2>
+	</h2>
+	<p>I prefer the recursive definition:	</p>
+</section>
+<section>
+	<h2>
+	</h2>
+	<p>Let $P_0, P_1, \ldots, P_n$ be any sequence of points.</p>
+\[B_{P_0}(t)=P_0\]
+\[B_{P_0P_1\ldots P_n}(t) = (1-t)B_{P_0P_1\ldots P_{n-1}}(t)+tB_{P_1\ldots P_n}(t)\]
+</section>
+<section>
+	<h2>
+	</h2>
+	<p>There is no local control in degree n Bézier curves—meaning that any change to a control point requires recalculation of and thus affects the aspect of the entire curve, although the further that one is from the control point that was changed, the smaller is the change in the curve.	</p>
+</section>
+<section>
+	<h2>
+	</h2>
+	<p>	See the section ``Constructing Bézier curves" in the wikipedia article on Bézier curves for some potentially useful ideas on how to get started.</p>
+</section>
+<!--section>
 	<h2>
 	</h2>
 	<p>	</p>
@@ -418,27 +440,7 @@ then for all $x$ in $[a, b]$
 	<h2>
 	</h2>
 	<p>	</p>
-</section>
-<section>
-	<h2>
-	</h2>
-	<p>	</p>
-</section>
-<section>
-	<h2>
-	</h2>
-	<p>	</p>
-</section>
-<section>
-	<h2>
-	</h2>
-	<p>	</p>
-</section>
-<section>
-	<h2>
-	</h2>
-	<p>	</p>
-</section>
+</section-->
 
 				<section>
 					<h2>That's all folks (for now)!</h2>
