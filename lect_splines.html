@@ -127,7 +127,7 @@ $$[(x_0, f(x_0)), (x_1, f(x_1)), (x_2, f(x_2)), \cdots  ,(x_{n-1}, f(x_{n-1})), 
 	<h2>
 	</h2>
 	<p>	A disadvantage of linear function approximation is that there is likely no differ-
-entiability at the endpoints of the subintervals, which, in a geometrical context, means that the interpolating function is not "smooth."" Often it is clear from physical conditions that smoothness is required, so the approximating function must be continuously differentiable.</p>
+entiability at the endpoints of the subintervals, which, in a geometrical context, means that the interpolating function is not "smooth. Often it is clear from physical conditions that smoothness is required, so the approximating function must be continuously differentiable.</p>
 </section>
 
 <section>
@@ -151,7 +151,30 @@ entiability at the endpoints of the subintervals, which, in a geometrical contex
 <section>
 	<h2>
 	</h2>
-	<p>	</p>
+	<p>	Given a function f defined on $[a, b]$ and a set of nodes
+		\[a = x_0 < x_1 < \cdots < x_n = b,\]
+		a <b>cubic spline interpolant</b> $S$ for $$ is a function that satisfies the following conditions:
+		<ol>
+<li>
+$S(x)$ is a cubic polynomial, denoted $S_j(x)$, on the subinterval $[x_j,x_{j+1}]$ for each $j = 0, 1, \ldots, n-1;$</li>
+<li>
+$S_j(x_j)=f(x_j)$ and $S_j(x_{j+1})=f(x_{j+1})$ for each $j=0,1,\ldots,n−1$;
+</li>
+<li>
+$S_{j+1}(x_{j+1}) = S_j(x_{j+1})$ for each $j = 0, 1, \ldots , n - 2$; (Implied by (b).)</li>
+<li>
+ $S' (x_{j+1})=S'(x_{j+1})$ for each $j=0,1,\ldots,n-2$;</li>
+<li>
+$S''_{j+1} (x_{j+1})=S''_{j}(x_{j+1})$ for each $j=0,1,\ldots,n-2$;</li>
+<li>
+One of the following sets of boundary conditions is satisfied:</li>
+<ol>
+<li>
+$S''(x_0) = S''(x_n) = 0$ (<b>natural</b> (or free) boundary);</li>
+<li>
+$S'(x_0) = f'(x_0)$ and $S'(x_n) = f'(x_n)$ (<b>clamped</b> boundary).</li>
+</ol>
+</ol></p>
 </section>
 <section>
 	<h2>
