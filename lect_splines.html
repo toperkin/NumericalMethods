@@ -161,7 +161,7 @@ $S(x)$ is a cubic polynomial, denoted $S_j(x)$, on $[x_j,x_{j+1}]$</li>
 $S_j(x_j)=f(x_j)$ and $S_j(x_{j+1})=f(x_{j+1})$
 </li>
 <li>
- $S' (x_{j+1})=S'(x_{j+1})$ </li>
+ $S'_{j+1}(x_{j+1})=S'_j(x_{j+1})$ </li>
 <li>
 $S''_{j+1} (x_{j+1})=S''_{j}(x_{j+1})$</li>
 <li>
@@ -177,47 +177,62 @@ $S'(x_0) = f'(x_0)$ and $S'(x_n) = f'(x_n)$ (<b>clamped</b> boundary).</li>
 <section>
 	<h2>
 	</h2>
-	<p>	</p>
+	<p>Let $f\in C^4[a, b] with $\max_a\le x\le b |f^{(4)}(x)|=M.  If $S$ is the unique clamped cubic spline interpolant to $f$ with respect to the nodes
+		\[a = x_0 < x_1 < \cdots < x_n = b,\]
+then for all $x$ in $[a, b]$
+\[|f(x)-S(x)|\le \frac{5M}{384}\max_{0\le j\le n-1}(x_{j+1}-x_j)^4.\]
+</p>
 </section>
 <section>
 	<h2>
+	</h2>
+	<p>	A fourth order error bound result also holds in the case of natural boundary conditions but it is more difficult to express.</p>
+</section>
+<section>
+	<h2>
+	</h2>
+	<p>A special case...	</p>
+</section>
+<section>
+	<h2>Catmull Rom Splines!
 	</h2>
 	<p>	</p>
 </section>
 <section>
 	<h2>
 	</h2>
-	<p>	</p>
+	<p>Essentially for any four consecutive points, $P_0, P_1, P_2, P_3$, the polynomial we draw between $P_1$ and $P_2$ is the cubic ploy $f$ with</p>
+	<ul>
+	<li>$f(x_1)=y_1$</li>
+
+	<li>$f(x_2)=y_2$</li>
+
+	<li>$f'(x_1)=\frac{y_2-y_0}{x_2-x_0}$</li>
+
+	<li>$f'(x_2)=\frac{y_3-y_1}{x_3-x_1}$</li>
+
+	</ul>
+
 </section>
 <section>
 	<h2>
 	</h2>
-	<p>	</p>
+	<p>	Time to draw on the board.  Take good notes.  This is something you have to implement...	</p>
 </section>
 <section>
 	<h2>
 	</h2>
-	<p>	</p>
+	<p>	I like BEZIER splines too!</p>
 </section>
 <section>
 	<h2>
 	</h2>
-	<p>	</p>
+	<p>	Pierre Etienne Bézier (1910-1999) was head of design and production for Renault motorcars for most of his professional life. He began his research into computer-aided design and manufacturing in 1960, developing interactive tools for curve and surface design, and initiated computer-generated milling for automobile modeling.</p>
 </section>
 <section>
 	<h2>
 	</h2>
-	<p>	</p>
-</section>
-<section>
-	<h2>
-	</h2>
-	<p>	</p>
-</section>
-<section>
-	<h2>
-	</h2>
-	<p>	</p>
+	<p>	The Bézier curves that bear his name have the advantage of being based on a rigorous mathematical theory that does not need to be explicitly recognized by the practitioner who simply wants to make an aesthetically pleasing curve or surface. These are the curves that are the basis of the powerful Adobe Postscript system, and produce the freehand curves that are generated in most sufficiently powerful computer graphics packages.</p>
 </section>
 <section>
 	<h2>
