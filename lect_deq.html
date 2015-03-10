@@ -211,17 +211,24 @@ has a unique solution $z(t)$ that satisfies<br /></p>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p>
+The second problem specified is called a <b>perturbed problem</b> associated with the original problem. It assumes the possibility of an error being introduced in the statement of the differential equation, as well as an error δ0 being present in the initial condition.</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p>	Numerical methods will always be concerned with solving a perturbed problem because any round-off error introduced in the representation perturbs the original problem. Unless the original problem is well-posed, there is little reason to expect that the numerical solution to a perturbed problem will accurately approximate the solution to the original problem.</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p>	<b>Theorem.</b> Suppose that
+					</p>
+					<br />
+\[ D= \{ (t,y) \colon a\le t\le b \text{  and } -\infty < y< \infty\}\]<br /><p> If $f$ is continuous and satisfies a Lipschitz condition in the variable $y$ on the set $D$, then the initial-value problem
+</p><br />
+\[\frac{df}{dt} =f(t,y),\quad a\le t\le b,\quad y(a)=\alpha\]<br /><p>
+	is well-posed.</p>
 				</section>
 				<section>
 					<h2>
