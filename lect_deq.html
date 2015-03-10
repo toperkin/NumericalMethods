@@ -161,35 +161,47 @@ also belongs to $D$ for every $\lambda$ in $[0, 1]$.
 					<p><b>Theorem.</b> Suppose that
 					</p>
 					<br />
-\[ D= \{ (t,y) \colon a\le t\le b \text{ and } -\infty < y< \infty\}\]<br /><p>
+\[ D= \{ (t,y) \colon a\le t\le b \text{  and } -\infty < y< \infty\}\]<br /><p>
 and that $f(t,y)$ is continuous on $D$. If $f$ satisfies a Lipschitz condition on $D$ in the variable $y$, then the initial-value problem
-\[y'(t)=f(t,y),\quad a\le t\le b, y(a)=\alpha,\]
+\[y'(t)=f(t,y),\quad a\le t\le b,\quad y(a)=\alpha,\]
 has a unique solution $y(t)$ for $a \le t \le b$.	</p>
 				</section>
 				<section>
-					<h2>
+					<h2>Well-Posed Problems
 					</h2>
 					<p>	</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p>Now that we have, to some extent, taken care of the question of when initial-value problems have unique solutions, we can move to the second important consideration when approximating the solution to an initial-value problem. Initial-value problems obtained by observing physical phenomena generally only approximate the true situation, so we need to know whether small changes in the statement of the problem introduce correspondingly small changes in the solution. This is also important because of the introduction of round-off error when numerical methods are used.</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p><b>Question:</b> How do we determine whether a particular problem has the property that small changes, or perturbations, in the statement of the problem introduce correspondingly small changes in the solution?	</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p>	As usual, we first need to give a workable definition to express this concept.</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p>	<b>Definition.</b> The initial-value problem
+\[\frac{df}{dt} =f(t,y),\quad a\le t\le b,\quad y(a)=\aplha\]
+is said to be a well-posed problem if:
+<ul>
+<li>A unique solution, $y(t)$, to the problem exists, and</li>
+
+<li>There exist constants $\varepsilon_0 > 0$ and $k > 0$ such that for any $\varepsilon$, with $\varepsilon_0 >\varepsilon>0$, whenever $\delta(t)$ is continuous with $|\delta(t)| < \varepsilon$ for all $t$ in $[a, b]$, and when $|\delta_0| < \varepsion$, the initial-value problem
+	\[\frac{dz}{dt} =f(t,y)+\delta(t),\quad a\le t\le b,\quad z(a)=\aplha+\delta_0\]
+has a unique solution $z(t)$ that satisfies
+\[ |z(t)-y(t)|< k \varepsilon\] for all $t$ in $[a,b]$.
+</li>
+</ul>
+</p>
 				</section>
 				<section>
 					<h2>
