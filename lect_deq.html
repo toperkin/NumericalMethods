@@ -418,28 +418,42 @@ function $f$ about $(t_0, y_0)$, and $R_n(t, y)$ is the <b>remainder term</b> as
 				</section>
 				<section>
 					<h2>
+Runge-Kutta Order Four (RK4)
 					</h2>
 					<p>	</p>
+
+				<ul>
+				<li>$w_0=\alpha$<li>
+				<li>$k_1=hf(t_i,w_i)$<li>
+				<li>$k_2 = h f(t_i + \frac{h}{2}, w_i + \frac{1}{2} k_1 )$<li>
+				<li>$k_3 = h f(t_i+\frac{h}{2}, w_i+\frac{1}{2}k_2 )$<li>
+				<li>$k_4=hf(t_{i+1},w_i+k_3)$<li>
+				<li>$w_{i+1} = w_i + \frac{1}{6}(k_1+2k_2+2k_3+k_4)$<li>
+
+				</ul>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	This method has local truncation error $\mathcal{O}(h^4)$, provided the solution $y(t)$ has five continuous derivatives.</p>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	The Runge-Kutta method of order four requires four evaluations per step, whereas Euler’s method requires only one evaluation. Hence if the Runge-Kutta method of order four is to be superior it should give more accurate answers than Euler’s method with one-fourth the step size. Similarly, if the Runge-Kutta method of order four is to be superior to the second-order Runge-Kutta methods, which require two evaluations per step, it should give more accuracy with step size $h$ than a second-order method with step size $h/2$.</p>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>For the problem
+\[y'=y-t^2+1,\quad 0\le t\le 2,\quad y(0)=0.5,\]
+Euler's method with $h = 0.025$, the Midpoint method with $h = 0.05$, and the Runge-Kutta fourth-order method with $h = 0.1$ are compared at the common mesh points of these methods $0.1$, $0.2$, $0.3$, $0.4$, and $0.5$. Each of these techniques requires $20$ function evaluations to determine the values listed in the table below to approximate $y(0.5)$. In this example, the fourth-order method is clearly superior.	</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
 					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
+					<img src="http://toperkin.github.io/NumericalMethods/imags-lect-deq/comp.png" alt="" style="width: 900px;">
 				</section>
 				<section>
 					<h2>
