@@ -89,7 +89,7 @@ The <b>second</b> approach, which we will examine in this chapter, uses methods 
 				<section>
 					<h2>
 					</h2>
-					<p>A function $f (t, y)$ is said to satisfy a <b>Lipschitz condition</b> in the variable $y$ on a set $D \subset \mathbb{R}^2$
+					<p><b>Definition.</b> A function $f (t, y)$ is said to satisfy a <b>Lipschitz condition</b> in the variable $y$ on a set $D \subset \mathbb{R}^2$
 if a constant $L > 0$ exists with
 \[|f(t,y_1)-f(t,y_2)|\le L|y_1 -y_2|,\]
 whenever $(t, y_1)$ and $(t, y_2)$ are in $D$. The constant $L$ is called a <b>Lipschitz constant</b> for $f$.	</p>
@@ -101,30 +101,39 @@ whenever $(t, y_1)$ and $(t, y_2)$ are in $D$. The constant $L$ is called a <b>L
 \[D = \{(t, y) \colon 1 \le t\le 2\text{ and } -3\le y\le 4\}.\]
 
 					</section>
+
+					<section>
+						<h2>
+						</h2>
+						<p>
+	Rudolf Lipschitz (1832-1903) worked in many branches of mathematics, including number theory, Fourier series, differential equations, analytical mechanics, and potential theory. He is best known for this generalization of the work of Augustin-Louis Cauchy (1789-1857) and Guiseppe Peano (1856-1932).	</p>
+					</section>
+
 					<section>
 					<p>
 <b>Solution:</b> For each pair of points $(t, y_1)$ and $(t, y_2)$ in $D$ we have</p>
 <br />
 
-\[|f(t,y_1)-f(t,y_2)| = |t\ |y_1|-t |y_2| | = |t|\ | (|y_1|- | y_2 |)| \le 2|y_1 -y_2|.\]<br /><p>
+\[|f(t,y_1)-f(t,y_2)| = |t\ |y_1|-t\ |y_2|\ | = |t|\ | (|y_1|- | y_2 |)| \le 2|y_1 -y_2|.\]<br /><p>
 Thus $f$ satisfies a Lipschitz condition on $D$ in the variable $y$ with Lipschitz constant 2. The smallest value possible for the Lipschitz constant for this problem is $L = 2$, because, for example,
 \[|f (2, 1) - f (2, 0)| = |2 - 0| = 2|1 - 0|.\]	</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
-					<p>	</p>
+					<p><b>Definition.</b> A set $D \subset \mathbb{R}^2$ is said to be <b>convex</b> if whenever $(t_1,y_1)$ and $(t_2,y_2)$ belong to $D$, then</p>
+					<br />
+\[((1-\lambda)t_1 +\lambda t_2, (1-\lambda)y_1 + \lambda y_2)\]<br /><p>
+also belongs to $D$ for every $\lambda$ in $[0, 1]$.
+					</p>
 				</section>
 				<section>
 					<h2>
 					</h2>
 					<p>	</p>
+					<img src="http://toperkin.github.io/NumericalMethods/assets-lect_deq/cvx.png" alt="" style="width: 900px;">
 				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
+
 				<section>
 					<h2>
 					</h2>
