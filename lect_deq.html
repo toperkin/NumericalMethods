@@ -333,14 +333,14 @@ The common distance between the points $h = (b - a)/N = t_{i+1} - t_i$ is called
 					\[w_0=\alpha\]
 					\[w_{i+1} = w_i +h\phi(t_i, w_i), \text{  for each } i=0, 1, \ldots, N-1\]
 					<p>has <b>local truncation error</b></p>
-					\[\tao_{i+1} = \frac{y_{i+1} - (y_i+h\phi(t_i,y_i))}{h} = \frac{y_{i+1} - y_i}{h} +\phi(t_i,y_i)\]
+					\[\tau_{i+1} = \frac{y_{i+1} - (y_i+h\phi(t_i,y_i))}{h} = \frac{y_{i+1} - y_i}{h} +\phi(t_i,y_i)\]
 					for each $i=0,1, \ldots, N-1,$ where $y_i$ and $y_{i+1}$ denote the solution at $t_i$ and $t_{i+1}$.
 				</section>
 				<section>
 					<h2>
 					</h2>
 					<p>For example, Euler’s method has local truncation error at the $i$th step	</p><br />
-					\[\tao_{i+1} = \frac{y_{i+1} - y_i}{h} -f(t_i,y_i)\]<br /><p>
+					\[\tau_{i+1} = \frac{y_{i+1} - y_i}{h} -f(t_i,y_i)\]<br /><p>
 					for each $i=0,1, \ldots, N-1$.</p>
 				</section>
 				<section>
@@ -397,7 +397,7 @@ The common distance between the points $h = (b - a)/N = t_{i+1} - t_i$ is called
 					<h2>
 					</h2>
 					<p>	and </p>
-					\[ \frac{1}{(n+1)!}\sum_{j=0}^{n+1}         \binom{n+1}{j}(t-t_0)^{n-j}(y-y_0)^j\frac{\partial^nf}{\partial t^{n+1-j}\partial y^j}(\zeta,\mu) \]
+					\[ R_n(t, y) =\frac{1}{(n+1)!}\sum_{j=0}^{n+1}         \binom{n+1}{j}(t-t_0)^{n-j}(y-y_0)^j\frac{\partial^nf}{\partial t^{n+1-j}\partial y^j}(\zeta,\mu) \]
 				</section>
 				<section>
 					<h2>
@@ -406,9 +406,15 @@ The common distance between the points $h = (b - a)/N = t_{i+1} - t_i$ is called
 function $f$ about $(t_0, y_0)$, and $R_n(t, y)$ is the <b>remainder term</b> associated with $P_n(t, y).$</p>
 				</section>
 				<section>
-					<h2>
+					<h2>Some techniques to look up...
 					</h2>
-					<p>	</p>
+					<p>
+						<ul>
+							<li>Runge-Kutta Methods of Order Two</li>
+							<li>Midpoint Method</li>
+						<li>Modified Euler Method</li>
+						</ul>
+					</p>
 				</section>
 				<section>
 					<h2>
