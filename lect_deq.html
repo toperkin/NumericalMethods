@@ -82,6 +82,12 @@ The <b>second</b> approach, which we will examine in this chapter, uses methods 
 					<p>	The methods that we consider in this chapter do not produce a continuous approximation to the solution of the initial-value problem. Rather, approximations are found at certain specified, and often equally spaced, points. Some method of interpolation, commonly Hermite, is used if intermediate values are needed.</p>
 				</section>
 				<section>
+					<h2>Theoretical Build-up.
+					</h2>
+					<p>	</p>
+				</section>
+
+				<section>
 					<h2>
 					</h2>
 					<p>	We need some definitions and results from the theory of ordinary differential equations</p>
@@ -231,9 +237,72 @@ The second problem specified is called a <b>perturbed problem</b> associated wit
 	is well-posed.</p>
 				</section>
 				<section>
+					<h2>Numerical Techniques.
+					</h2>
+					<p>	</p>
+				</section>
+				<section>
+					<h2>Euler’s method
+					</h2>
+					<p>	</p>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>Euler’s method is the most elementary approximation technique for solving initial-value problems. Although it is seldom used in practice, the simplicity of its derivation can be used to illustrate the techniques involved in the construction of some of the more advanced techniques, without the cumbersome algebra that accompanies these constructions.	</p>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	The object of Euler’s method is to obtain approximations to the well-posed initial-value problem</p><br />
+					\[\frac{df}{dt} =f(t,y),\quad a\le t\le b,\quad y(a)=\alpha\]<br /></p>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>A continuous approximation to the solution $y(t)$ will not be obtained; instead, approximations to y will be generated at various values, called <b>mesh points</b>, in the interval $[a, b]$. Once the approximate solution is obtained at the points, the approximate solution at other points in the interval can be found by interpolation.	</p>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>We first make the stipulation that the mesh points are equally distributed throughout the interval $[a, b]$. This condition is ensured by choosing a positive integer $N$ and selecting the mesh points
+\[t_i =a+ih, \text{  for each } i=0,1,2,\ldots,N.\]
+The common distance between the points $h = (b - a)/N = t_{i+1} - t_i$ is called the <b>step size</b>.	</p>
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	The use of elementary difference methods to approximate the solution to differential equations was one of the numerous mathematical topics that was first presented to the mathematical public by the most prolific of mathematicians, Leonhard Euler (1707–1783).</p>
+				</section>
+				<section>
 					<h2>
 					</h2>
 					<p>	</p>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect-deq/em.png" alt="" style="width: 900px;">
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	To interpret Euler’s method geometrically, note that when $w_i$ is a close approximation to $y(t_i)$, the assumption that the problem is well-posed implies that</p>
+					\[f(t_i, w_i) =\approx y'(t_i)=f(t_i, y(t_i)).\]
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	</p>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect-deq/target_sol.png" alt="" style="width: 900px;">
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	</p>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect-deq/step1.png" alt="" style="width: 900px;">
+				</section>
+				<section>
+					<h2>
+					</h2>
+					<p>	</p>
+					<img src="http://toperkin.github.io/NumericalMethods/images-lect-deq/approx_soln.png" alt="" style="width: 900px;">
 				</section>
 				<section>
 					<h2>
@@ -245,66 +314,7 @@ The second problem specified is called a <b>perturbed problem</b> associated wit
 					</h2>
 					<p>	</p>
 				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
-				<section>
-					<h2>
-					</h2>
-					<p>	</p>
-				</section>
+
 				<section>
 					<h2>
 					</h2>
